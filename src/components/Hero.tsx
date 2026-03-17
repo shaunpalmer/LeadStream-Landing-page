@@ -32,7 +32,7 @@ export default function Hero() {
               View Pro Managed Setup
             </a>
             <a
-              href="/lite"
+              href="#downloads"
               className="text-white/80 hover:text-white font-medium underline decoration-primary/50 underline-offset-4"
             >
               Try LeadStream Lite Free

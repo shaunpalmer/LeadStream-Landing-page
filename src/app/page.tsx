@@ -268,7 +268,7 @@ export default function Home() {
       </section>
 
       {/* Downloads Section */}
-      <section className="py-20 px-4">
+      <section id="downloads" className="py-20 px-4">
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold mb-4">Free Downloads</h2>
