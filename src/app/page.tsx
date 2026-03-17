@@ -81,6 +81,23 @@ const pricingPlans = [
   }
 ];
 
+const downloads = [
+  {
+    id: "leadstream-lite",
+    title: "LeadStream Lite",
+    description: "Free starter version for testing and early rollout.",
+    file: "/assets/downloads/leadstream-lite.zip",
+    cta: "Download Free"
+  },
+  {
+    id: "leadstream-checklist",
+    title: "Lead Tracking Checklist",
+    description: "A simple checklist to tighten attribution and call tracking.",
+    file: "/assets/downloads/leadstream-checklist.pdf",
+    cta: "Download PDF"
+  }
+];
+
 export default function Home() {
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -238,6 +255,36 @@ export default function Home() {
                   }`}
                 >
                   {plan.cta}
+                </a>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Downloads Section */}
+      <section className="py-20 px-4">
+        <div className="max-w-4xl mx-auto">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">Free Downloads</h2>
+            <p className="text-white/60 max-w-xl mx-auto">
+              Grab the free LeadStream resources, starter files, and tools. More downloads will be added over time.
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 gap-6">
+            {downloads.map((item) => (
+              <div
+                key={item.id}
+                className="glass-card rounded-xl p-6 flex flex-col"
+              >
+                <h3 className="text-xl font-semibold mb-2">{item.title}</h3>
+                <p className="text-white/60 text-sm mb-4 flex-grow">{item.description}</p>
+                <a
+                  href={item.file}
+                  className="inline-flex items-center justify-center py-2 px-4 rounded-lg bg-white/10 hover:bg-white/20 text-white font-medium transition-colors"
+                >
+                  {item.cta}
                 </a>
               </div>
             ))}
