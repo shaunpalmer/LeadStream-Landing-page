@@ -66,17 +66,17 @@ const pricingPlans = [
     highlighted: true
   },
   {
-    name: "Enterprise",
-    price: "Custom",
-    description: "For large organizations",
+    name: "Lifetime Deals",
+    price: "5.5 years",
+    description: "One-time payment, lifetime access",
     features: [
-      "Unlimited numbers",
-      "Custom integrations",
-      "Dedicated account manager",
-      "SLA guarantee",
-      "On-premise options"
+      "Unlimited phone numbers",
+      "Unlimited calls",
+      "All Pro features included",
+      "Lifetime updates",
+      "Priority support"
     ],
-    cta: "Contact Sales",
+    cta: "Buy your license here",
     highlighted: false
   }
 ];
