@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LeadStream - Call Tracking & Attribution</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: '#3b82f6',
+            'primary-dark': '#2563eb',
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    .hero-subtitle-gradient {
+      background: linear-gradient(135deg, rgba(59, 130, 246, 0.15) 0%, rgba(139, 92, 246, 0.15) 100%);
+      border: 1px solid rgba(139, 92, 246, 0.3);
+    }
+    .hero-subtitle-text {
+      background: linear-gradient(135deg, #60a5fa 0%, #a78bfa 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .hero-button-gradient {
+      background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%);
+    }
+    .hero-button-gradient:hover {
+      background: linear-gradient(135deg, #2563eb 0%, #7c3aed 100%);
+    }
+    .glass-card {
+      background: rgba(255, 255, 255, 0.03);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      transition: all 0.3s ease;
+    }
+    .glass-card:hover {
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      transform: translateY(-4px);
+    }
+    .glow-gradient {
+      background: radial-gradient(ellipse 80% 50% at 50% -20%, rgba(59, 130, 246, 0.3), transparent);
+    }
+    .sticky-header {
+      transition: all 0.3s ease;
+    }
+  </style>
+</head>
+<body class="min-h-screen bg-neutral-900 text-white">
+  <!-- Sticky Header -->
+  <header id="header" class="fixed top-0 left-0 right-0 z-50 py-5">
+    <div class="max-w-7xl mx-auto px-4 flex items-center justify-between">
+      <a href="#" class="text-xl font-bold">LeadStream</a>
+
+      <!-- Desktop Navigation -->
+      <nav class="hidden md:flex items-center gap-8">
+        <a href="#features" class="text-white/70 hover:text-white transition-colors text-sm">Features</a>
+        <a href="#pricing" class="text-white/70 hover:text-white transition-colors text-sm">Pricing</a>
+        <a href="/lite" class="text-white/70 hover:text-white transition-colors text-sm">Lite</a>
+        <a href="#pricing" class="bg-primary hover:bg-primary-dark px-4 py-2 rounded-lg text-sm font-medium transition-colors">
+          Get Started
+        </a>
+      </nav>
+
+      <!-- Mobile Menu Button -->
+      <button id="mobile-menu-btn" class="md:hidden text-white p-2" aria-label="Toggle menu">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+        </svg>
+      </button>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="md:hidden hidden absolute top-full left-0 right-0 bg-neutral-900/95 backdrop-blur-md border-b border-white/10">
+      <nav class="flex flex-col p-4 gap-4">
+        <a href="#features" class="text-white/70 hover:text-white transition-colors">Features</a>
+        <a href="#pricing" class="text-white/70 hover:text-white transition-colors">Pricing</a>
+        <a href="/lite" class="text-white/70 hover:text-white transition-colors">Lite</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="relative overflow-hidden z-10 pt-35 md:pt-40 xl:pt-45 pb-20">
+    <div class="glow-gradient absolute inset-0 z-0"></div>
+    <div class="mx-auto max-w-[900px] px-4 relative z-1">
+      <div class="text-center">
+        <a href="#features" class="hero-subtitle-gradient relative mb-5 font-medium text-sm inline-flex items-center gap-2 py-2 px-4.5 rounded-full">
+          <span class="hero-subtitle-text">Now Discoverable: LeadStream Beta</span>
+        </a>
+        <h1 class="text-white mb-6 text-4xl font-extrabold sm:text-6xl">
+          Stop Guessing. <br> Start Tracking.
+        </h1>
+        <p class="max-w-[600px] mx-auto mb-9 font-medium md:text-lg text-white/70">
+          Deterministic call tracking and attribution built for the New Zealand service industry. No over-engineered fluff. Just data you can bank on.
+        </p>
+
+        <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+          <a href="#pricing" class="hero-button-gradient rounded-lg py-3 px-8 text-white font-bold shadow-xl hover:scale-105 transition-transform">
+            View Pro Managed Setup
+          </a>
+          <a href="/lite" class="text-white/80 hover:text-white font-medium underline decoration-primary/50 underline-offset-4">
+            Try LeadStream Lite Free
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features Section -->
+  <section id="features" class="py-20 px-4">
+    <div class="max-w-7xl mx-auto">
+      <div class="text-center mb-16">
+        <h2 class="text-3xl md:text-4xl font-bold mb-4">Built for Serious Operators</h2>
+        <p class="text-white/60 max-w-2xl mx-auto">
+          Everything you need to track, attribute, and close more leads. No bloat, just results.
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <!-- Feature 1 -->
+        <div class="glass-card rounded-xl p-6">
+          <div class="text-3xl mb-4">🎯</div>
+          <h3 class="text-xl font-semibold mb-2">Deterministic Attribution</h3>
+          <p class="text-white/60 text-sm">Know exactly which source drove every call. No guesswork, no probabilistic black boxes.</p>
+        </div>
+
+        <!-- Feature 2 -->
+        <div class="glass-card rounded-xl p-6">
+          <div class="text-3xl mb-4">📞</div>
+          <h3 class="text-xl font-semibold mb-2">NZ Telecom Integration</h3>
+          <p class="text-white/60 text-sm">Built specifically for New Zealand carriers. Local support, local numbers, local expertise.</p>
+        </div>
+
+        <!-- Feature 3 -->
+        <div class="glass-card rounded-xl p-6">
+          <div class="text-3xl mb-4">📊</div>
+          <h3 class="text-xl font-semibold mb-2">Real-Time Dashboard</h3>
+          <p class="text-white/60 text-sm">Watch calls come in live. Track conversion paths and attribute revenue instantly.</p>
+        </div>
+
+        <!-- Feature 4 -->
+        <div class="glass-card rounded-xl p-6">
+          <div class="text-3xl mb-4">🚀</div>
+          <h3 class="text-xl font-semibold mb-2">Campaign-Level Tracking</h3>
+          <p class="text-white/60 text-sm">Track individual marketing campaigns down to the ad, keyword, and creative level.</p>
+        </div>
+
+        <!-- Feature 5 -->
+        <div class="glass-card rounded-xl p-6">
+          <div class="text-3xl mb-4">🎙️</div>
+          <h3 class="text-xl font-semibold mb-2">Call Recording & Transcription</h3>
+          <p class="text-white/60 text-sm">Automatically record and transcribe calls for quality assurance and training.</p>
+        </div>
+
+        <!-- Feature 6 -->
+        <div class="glass-card rounded-xl p-6">
+          <div class="text-3xl mb-4">🔗</div>
+          <h3 class="text-xl font-semibold mb-2">CRM Integration</h3>
+          <p class="text-white/60 text-sm">Push call data directly to your CRM. Sync with Salesforce, HubSpot, and more.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pricing Section -->
+  <section id="pricing" class="py-20 px-4 bg-neutral-800/30">
+    <div class="max-w-7xl mx-auto">
+      <div class="text-center mb-16">
+        <h2 class="text-3xl md:text-4xl font-bold mb-4">Simple, Transparent Pricing</h2>
+        <p class="text-white/60 max-w-2xl mx-auto">
+          Choose the plan that fits your business. No hidden fees, no surprises.
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+        <!-- Lite Plan -->
+        <div class="glass-card rounded-xl p-6">
+          <h3 class="text-xl font-semibold mb-2">LeadStream Lite</h3>
+          <p class="text-3xl font-bold mb-2">Free</p>
+          <p class="text-white/60 text-sm mb-6">Perfect for testing the waters</p>
+          <ul class="space-y-3 mb-8">
+            <li class="text-sm text-white/70 flex items-center gap-2">
+              <svg class="w-4 h-4 text-primary flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+              </svg>
+              1 phone number
+            </li>
+            <li class="text-sm text-white/70 flex items-center gap-2">
+              <svg class="w-4 h-4 text-primary flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+              </svg>
+              100 calls/month
+            </li>
+            <li class="text-sm text-white/70 flex items-center gap-2">
+              <svg class="w-4 h-4 text-primary flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+              </svg>
+              Basic analytics
+            </li>
+            <li class="text-sm text-white/70 flex items-center gap-2">
+              <svg class="w-4 h-4 text-primary flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+              </svg>
+              Email support
+            </li>
+          </ul>
+          <a href="#" class="block text-center py-3 rounded-lg font-medium bg-white/10 hover:bg-white/20 text-white transition-colors">
+            Start Free
+          </a>
+        </div>
+
+        <!-- Pro Plan -->
+        <div class="glass-card rounded-xl p-6 ring-2 ring-primary">
+          <span class="bg-primary text-xs font-medium px-3 py-1 rounded-full inline-block mb-4">
+            Most Popular
+          </span>
+          <h3 class="text-xl font-semibold mb-2">LeadStream Pro</h3>
+          <p class="text-3xl font-bold mb-2">$99/mo</p>
+          <p class="text-white/60 text-sm mb-6">For growing agencies and businesses</p>
+          <ul class="space-y-3 mb-8">
+            <li class="text-sm text-white/70 flex items-center gap-2">
+              <svg class="w-4 h-4 text-primary flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+              </svg>
+              5 phone numbers
+            </li>
+            <li class="text-sm text-white/70 flex items-center gap-2">
+              <svg class="w-4 h-4 text-primary flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+              </svg>
+              Unlimited calls
+            </li>
+            <li class="text-sm text-white/70 flex items-center gap-2">
+              <svg class="w-4 h-4 text-primary flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+              </svg>
+              Advanced analytics
+            </li>
+            <li class="text-sm text-white/70 flex items-center gap-2">
+              <svg class="w-4 h-4 text-primary flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+              </svg>
+              Call recording
+            </li>
+            <li class="text-sm text-white/70 flex items-center gap-2">
+              <svg class="w-4 h-4 text-primary flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+              </svg>
+              CRM integration
+            </li>
+            <li class="text-sm text-white/70 flex items-center gap-2">
+              <svg class="w-4 h-4 text-primary flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+              </svg>
+              Priority support
+            </li>
+          </ul>
+          <a href="#" class="block text-center py-3 rounded-lg font-medium bg-primary hover:bg-primary-dark text-white transition-colors">
+            View Pro Managed Setup
+          </a>
+        </div>
+
+        <!-- Enterprise Plan -->
+        <div class="glass-card rounded-xl p-6">
+          <h3 class="text-xl font-semibold mb-2">Enterprise</h3>
+          <p class="text-3xl font-bold mb-2">Custom</p>
+          <p class="text-white/60 text-sm mb-6">For large organizations</p>
+          <ul class="space-y-3 mb-8">
+            <li class="text-sm text-white/70 flex items-center gap-2">
+              <svg class="w-4 h-4 text-primary flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+              </svg>
+              Unlimited numbers
+            </li>
+            <li class="text-sm text-white/70 flex items-center gap-2">
+              <svg class="w-4 h-4 text-primary flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+              </svg>
+              Custom integrations
+            </li>
+            <li class="text-sm text-white/70 flex items-center gap-2">
+              <svg class="w-4 h-4 text-primary flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+              </svg>
+              Dedicated account manager
+            </li>
+            <li class="text-sm text-white/70 flex items-center gap-2">
+              <svg class="w-4 h-4 text-primary flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+              </svg>
+              SLA guarantee
+            </li>
+            <li class="text-sm text-white/70 flex items-center gap-2">
+              <svg class="w-4 h-4 text-primary flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+              </svg>
+              On-premise options
+            </li>
+          </ul>
+          <a href="#" class="block text-center py-3 rounded-lg font-medium bg-white/10 hover:bg-white/20 text-white transition-colors">
+            Contact Sales
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="py-8 px-4 border-t border-white/10">
+    <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
+      <p class="text-white/50 text-sm">© 2026 LeadStream. All rights reserved.</p>
+      <p class="text-white/50 text-sm">
+        Built &amp; Maintained by 
+        <a href="https://projectstudios.co.nz" target="_blank" rel="noopener noreferrer" class="text-primary hover:underline">
+          Project Studios
+        </a>
+      </p>
+    </div>
+  </footer>
+
+  <script>
+    // Sticky header on scroll
+    const header = document.getElementById('header');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 50) {
+        header.classList.add('bg-neutral-900/80', 'backdrop-blur-md', 'border-b', 'border-white/10', 'py-3');
+        header.classList.remove('py-5');
+      } else {
+        header.classList.remove('bg-neutral-900/80', 'backdrop-blur-md', 'border-b', 'border-white/10', 'py-3');
+        header.classList.add('py-5');
+      }
+    });
+
+    // Mobile menu toggle
+    const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    mobileMenuBtn.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+  </script>
+</body>
+</html>
