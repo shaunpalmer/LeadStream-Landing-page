@@ -66,11 +66,11 @@
   position: absolute;
   inset: 0;
   z-index: 2;
-  opacity: 0.08;
-  background-image: 
-    linear-gradient(rgba(96, 165, 250, 0.3) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(96, 165, 250, 0.3) 1px, transparent 1px);
-  background-size: 60px 60px;
+  opacity: 0.12;
+  background-image: url('https://projectstudios.co.nz/assets/images/large/GenerateQRCode.webp');
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
   mask-image: radial-gradient(ellipse 80% 60% at 50% 50%, black 30%, transparent 100%);
   -webkit-mask-image: radial-gradient(ellipse 80% 60% at 50% 50%, black 30%, transparent 100%);
 }
