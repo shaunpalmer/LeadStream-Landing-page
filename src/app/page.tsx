@@ -40,29 +40,29 @@ const pricingPlans = [
   {
     name: "LeadStream Lite",
     price: "Free",
-    description: "Perfect for testing the waters",
+    description: "Perfect for getting started and seeing how it works",
     features: [
-      "1 phone number",
-      "100 calls/month",
-      "Basic analytics",
-      "Email support"
+      "Full call tracking (no limits on calls)",
+      "Core analytics and attribution",
+      "WordPress plugin included",
+      "No advanced integrations",
+      "Limited feature set compared to Pro"
     ],
-    cta: "Start Free",
+    cta: "Get Started Free",
     highlighted: false
   },
   {
     name: "LeadStream Pro",
     price: "$99/mo",
-    description: "For growing agencies and businesses",
+    description: "For serious operators ready to scale",
     features: [
-      "5 phone numbers",
-      "Unlimited calls",
-      "Advanced analytics",
-      "Call recording",
-      "CRM integration",
+      "Everything in Lite",
+      "Advanced CRM integrations",
+      "Expanded analytics and reporting",
+      "More automation and control",
       "Priority support"
     ],
-    cta: "View Pro Managed Setup",
+    cta: "View Pro Features",
     highlighted: true
   },
   {
@@ -210,9 +210,9 @@ export default function Home() {
       <section id="pricing" className="py-20 px-4 bg-neutral-800/30">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">Stop Wasting Leads. Start Tracking Revenue.</h2>
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">Start Free. Upgrade When You&apos;re Ready.</h2>
             <p className="text-white/60 max-w-2xl mx-auto">
-              Choose the plan that fits your business. No hidden fees, no surprises.
+              Get real tracking in place today. Add advanced features and integrations as you grow.
             </p>
           </div>
 
@@ -231,7 +231,12 @@ export default function Home() {
                 )}
                 <h3 className="text-xl font-semibold mb-2">{plan.name}</h3>
                 <p className="text-3xl font-bold mb-2">{plan.price}</p>
-                <p className="text-white/60 text-sm mb-6">{plan.description}</p>
+                <p className="text-white/60 text-sm mb-2">{plan.description}</p>
+                {index === 0 && (
+                  <p className="text-white/50 text-xs italic mb-4">
+                    A practical, working version of LeadStream. Built to show you exactly how tracking works in your business before you upgrade.
+                  </p>
+                )}
                 <ul className="space-y-3 mb-8">
                   {plan.features.map((feature, i) => (
                     <li key={i} className="text-sm text-white/70 flex items-center gap-2">
