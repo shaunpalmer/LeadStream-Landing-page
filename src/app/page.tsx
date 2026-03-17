@@ -306,9 +306,14 @@ export default function Home() {
       {/* Footer */}
       <footer className="py-8 px-4 border-t border-white/10">
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
-          <p className="text-white/50 text-sm">© 2026 LeadStream. All rights reserved.</p>
+          <div className="flex items-center gap-4">
+            <p className="text-white/50 text-sm">© 2026 LeadStream. All rights reserved.</p>
+            <a href="/privacy" className="text-white/50 text-sm hover:text-white transition-colors">
+              Privacy Policy
+            </a>
+          </div>
           <p className="text-white/50 text-sm">
-            Built & Maintained by{" "}
+            Built &amp; Maintained by{" "}
             <a
               href="https://projectstudios.co.nz"
               target="_blank"
