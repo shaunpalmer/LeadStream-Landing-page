@@ -67,14 +67,14 @@ const pricingPlans = [
   },
   {
     name: "Lifetime Deals",
-    price: "5.5 years",
-    description: "One-time payment, lifetime access",
+    price: "$630",
+    description: "One-time payment. 5.5 years of access. You set it up yourself (DIY).",
     features: [
       "Unlimited phone numbers",
       "Unlimited calls",
       "All Pro features included",
       "Lifetime updates",
-      "Priority support"
+      "No onboarding included - you're on your own"
     ],
     cta: "Buy your license here",
     highlighted: false
