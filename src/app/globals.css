@@ -67,7 +67,7 @@
   inset: 0;
   z-index: 2;
   opacity: 0.12;
-  background-image: url('https://projectstudios.co.nz/assets/images/large/GenerateQRCode.webp');
+  background-image: url('/assets/large/GenerateQRCode.webp');
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
