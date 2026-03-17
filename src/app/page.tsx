@@ -133,8 +133,11 @@ export default function Home() {
             <a href="#pricing" className="text-white/70 hover:text-white transition-colors text-sm">
               Pricing
             </a>
-            <a href="/lite" className="text-white/70 hover:text-white transition-colors text-sm">
+            <a href="#downloads" className="text-white/70 hover:text-white transition-colors text-sm">
               Lite
+            </a>
+            <a href="/thanks" className="text-white/70 hover:text-white transition-colors text-sm">
+              Thanks
             </a>
             <a
               href="#pricing"
@@ -170,8 +173,11 @@ export default function Home() {
               <a href="#pricing" className="text-white/70 hover:text-white transition-colors" onClick={() => setMobileMenuOpen(false)}>
                 Pricing
               </a>
-              <a href="/lite" className="text-white/70 hover:text-white transition-colors" onClick={() => setMobileMenuOpen(false)}>
+              <a href="#downloads" className="text-white/70 hover:text-white transition-colors" onClick={() => setMobileMenuOpen(false)}>
                 Lite
+              </a>
+              <a href="/thanks" className="text-white/70 hover:text-white transition-colors" onClick={() => setMobileMenuOpen(false)}>
+                Thanks
               </a>
             </nav>
           </div>
