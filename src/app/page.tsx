@@ -210,7 +210,7 @@ export default function Home() {
       <section id="pricing" className="py-20 px-4 bg-neutral-800/30">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">Simple, Transparent Pricing</h2>
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">Stop Wasting Leads. Start Tracking Revenue.</h2>
             <p className="text-white/60 max-w-2xl mx-auto">
               Choose the plan that fits your business. No hidden fees, no surprises.
             </p>
