@@ -68,7 +68,7 @@ const pricingPlans = [
   {
     name: "Lifetime Deals",
     price: "$630",
-    description: "One-time payment. 5.5 years of access. You set it up yourself (DIY).",
+    description: "One-time payment. 8.5 years of access. You set it up yourself (DIY).",
     features: [
       "Unlimited phone numbers",
       "Unlimited calls",
@@ -81,22 +81,22 @@ const pricingPlans = [
   }
 ];
 
-const downloads = [
-  {
-    id: "leadstream-lite",
-    title: "LeadStream Lite",
-    description: "Free starter version for testing and early rollout.",
-    file: "/assets/downloads/leadstream-lite.zip",
-    cta: "Download Free"
-  },
-  {
-    id: "leadstream-checklist",
-    title: "Lead Tracking Checklist",
-    description: "A simple checklist to tighten attribution and call tracking.",
-    file: "/assets/downloads/leadstream-checklist.pdf",
-    cta: "Download PDF"
-  }
-];
+  const downloads = [
+    {
+      id: "leadstream-lite",
+      title: "LeadStream Lite",
+      description: "Free starter version for testing and early rollout.",
+      file: "/assets/downloads/LeadStream-main.zip",
+      cta: "Get Started Free"
+    },
+    {
+      id: "leadstream-checklist",
+      title: "Lead Tracking Checklist",
+      description: "A simple checklist to tighten attribution and call tracking.",
+      file: "/assets/downloads/leadstream-checklist.pdf",
+      cta: "Download PDF"
+    }
+  ];
 
 export default function Home() {
   const [scrolled, setScrolled] = useState(false);
@@ -283,23 +283,24 @@ export default function Home() {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-6">
-            {downloads.map((item) => (
-              <div
-                key={item.id}
-                className="glass-card rounded-xl p-6 flex flex-col"
-              >
-                <h3 className="text-xl font-semibold mb-2">{item.title}</h3>
-                <p className="text-white/60 text-sm mb-4 flex-grow">{item.description}</p>
-                <a
-                  href={item.file}
-                  className="inline-flex items-center justify-center py-2 px-4 rounded-lg bg-white/10 hover:bg-white/20 text-white font-medium transition-colors"
-                >
-                  {item.cta}
-                </a>
-              </div>
-            ))}
-          </div>
+           <div className="grid md:grid-cols-2 gap-6">
+             {downloads.map((item) => (
+               <a
+                 key={item.id}
+                 href={item.file}
+                 className="glass-card rounded-xl p-6 flex flex-col hover:bg-white/5 transition-colors"
+               >
+                 <h3 className="text-xl font-semibold mb-2">{item.title}</h3>
+                 <p className="text-white/60 text-sm mb-4 flex-grow">{item.description}</p>
+                 <a
+                   href={item.file}
+                   className="mt-6 inline-flex items-center justify-center py-2 px-4 rounded-lg bg-white/10 hover:bg-white/20 text-white font-medium transition-colors"
+                 >
+                   {item.cta}
+                 </a>
+               </a>
+             ))}
+           </div>
         </div>
       </section>
 
