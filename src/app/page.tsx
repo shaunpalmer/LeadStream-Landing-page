@@ -222,54 +222,55 @@ export default function Home() {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
-            {pricingPlans.map((plan, index) => (
-              <div
-                key={index}
-                className={`glass-card rounded-xl p-6 ${
-                  plan.highlighted ? "ring-2 ring-primary" : ""
-                }`}
-              >
-                {plan.highlighted && (
-                  <span className="bg-primary text-xs font-medium px-3 py-1 rounded-full inline-block mb-4">
-                    Most Popular
-                  </span>
-                )}
-                <h3 className="text-xl font-semibold mb-2">{plan.name}</h3>
-                <p className="text-3xl font-bold mb-2">{plan.price}</p>
-                <p className="text-white/60 text-sm mb-2">{plan.description}</p>
-                {index === 0 && (
-                  <p className="text-white/50 text-xs italic mb-4">
-                    A practical, working version of LeadStream. Built to show you exactly how tracking works in your business before you upgrade.
-                  </p>
-                )}
-                <ul className="space-y-3 mb-8">
-                  {plan.features.map((feature, i) => (
-                    <li key={i} className="text-sm text-white/70 flex items-center gap-2">
-                      <svg className="w-4 h-4 text-primary flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                        <path
-                          fillRule="evenodd"
-                          d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                          clipRule="evenodd"
-                        />
-                      </svg>
-                      {feature}
-                    </li>
-                  ))}
-                </ul>
-                <a
-                  href="#"
-                  className={`block text-center py-3 rounded-lg font-medium transition-colors ${
-                    plan.highlighted
-                      ? "bg-primary hover:bg-primary-dark text-white"
-                      : "bg-white/10 hover:bg-white/20 text-white"
-                  }`}
-                >
-                  {plan.cta}
-                </a>
-              </div>
-            ))}
-          </div>
+           <div className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+             {pricingPlans.map((plan, index) => (
+               <div
+                 key={index}
+                 className={`glass-card rounded-xl p-6 ${
+                   plan.highlighted ? "ring-2 ring-primary" : ""
+                 } ${index === 0 ? "cursor-pointer" : ""}`}
+                 onClick={index === 0 ? () => window.open("/assets/downloads/LeadStream-main.zip", "_blank") : undefined}
+               >
+                 {plan.highlighted && (
+                   <span className="bg-primary text-xs font-medium px-3 py-1 rounded-full inline-block mb-4">
+                     Most Popular
+                   </span>
+                 )}
+                 <h3 className="text-xl font-semibold mb-2">{plan.name}</h3>
+                 <p className="text-3xl font-bold mb-2">{plan.price}</p>
+                 <p className="text-white/60 text-sm mb-2">{plan.description}</p>
+                 {index === 0 && (
+                   <p className="text-white/50 text-xs italic mb-4">
+                     A practical, working version of LeadStream. Built to show you exactly how tracking works in your business before you upgrade.
+                   </p>
+                 )}
+                 <ul className="space-y-3 mb-8">
+                   {plan.features.map((feature, i) => (
+                     <li key={i} className="text-sm text-white/70 flex items-center gap-2">
+                       <svg className="w-4 h-4 text-primary flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                         <path
+                           fillRule="evenodd"
+                           d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                           clipRule="evenodd"
+                         />
+                       </svg>
+                       {feature}
+                     </li>
+                   ))}
+                 </ul>
+                 <a
+                   href="#"
+                   className={`block text-center py-3 rounded-lg font-medium transition-colors ${
+                     plan.highlighted
+                       ? "bg-primary hover:bg-primary-dark text-white"
+                       : "bg-white/10 hover:bg-white/20 text-white"
+                   }`}
+                 >
+                   {plan.cta}
+                 </a>
+               </div>
+             ))}
+           </div>
         </div>
       </section>
 
@@ -285,20 +286,22 @@ export default function Home() {
 
            <div className="grid md:grid-cols-2 gap-6">
              {downloads.map((item) => (
-               <a
+               <div
                  key={item.id}
-                 href={item.file}
-                 className="glass-card rounded-xl p-6 flex flex-col hover:bg-white/5 transition-colors"
+                 className="glass-card rounded-xl p-6 flex flex-col items-center justify-between hover:bg-white/5 transition-colors cursor-pointer"
+                 onClick={() => window.open(item.file, '_blank')}
                >
-                 <h3 className="text-xl font-semibold mb-2">{item.title}</h3>
-                 <p className="text-white/60 text-sm mb-4 flex-grow">{item.description}</p>
+                 <div className="flex-1 text-center">
+                   <h3 className="text-xl font-semibold mb-2">{item.title}</h3>
+                   <p className="text-white/60 text-sm mb-4">{item.description}</p>
+                 </div>
                  <a
                    href={item.file}
-                   className="mt-6 inline-flex items-center justify-center py-2 px-4 rounded-lg bg-white/10 hover:bg-white/20 text-white font-medium transition-colors"
+                   className="mt-4 inline-flex items-center justify-center py-2 px-4 rounded-lg bg-white/10 hover:bg-white/20 text-white font-medium transition-colors"
                  >
                    {item.cta}
                  </a>
-               </a>
+               </div>
              ))}
            </div>
         </div>
